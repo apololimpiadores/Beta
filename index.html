@@ -1,0 +1,336 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apolo Servicios</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0A4C6D;
+      --secondary-color: #1A74A2;
+      --accent-color: #FFB400;
+      --background-color: #F4F4F9;
+      --text-color: #333333;
+      --border-color: #A0AEC0; 
+      --border-hover-color: #4A90E2;
+      --shadow-color: rgba(0, 0, 0, 0.1); 
+      --product-background: rgba(255, 255, 255, 0.85); 
+    }
+
+    body {
+      background-color: var(--background-color);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      background-color: var(--primary-color);
+      background-image: url('imagenes/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-color);
+    }
+
+    .product-card {
+      background-color: var(--product-background);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-color); 
+      box-shadow: 0 4px 6px var(--shadow-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 450px;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      border-color: var(--border-hover-color); 
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      height: 100%;
+    }
+
+    .product-info h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      font-size: 1rem;
+      color: #555555;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .price span {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .price del {
+      font-size: 1rem;
+      color: #888888;
+    }
+
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: repeat(3, auto); 
+      gap: 24px;
+      justify-items: start;
+    }
+
+    .product-card a {
+      display: block;
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card a:hover {
+      background-color: var(--accent-color);
+    }
+
+    .main-container {
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    
+    .right-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    .right-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    
+    nav a img {
+      height: 80px; 
+      width: 160;
+    }
+
+  </style>
+</head>
+
+<body class="font-sans text-gray-900">
+
+  
+  <nav class="fixed top-0 left-0 w-full z-10 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="#">
+        <img src="imagenes/logo.jpg" alt="Logotipo Apolo" class="h-20"; margin-left: -20px;> 
+      </a>
+
+      <div>
+        <a href="#products" class="text-white px-6 hover:text-yellow-400 transition duration-300">Productos</a>
+
+        <a href="#contact" class="text-white px-6 hover:text-yellow-400 transition duration-300">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <section class="hero text-white text-center py-40 bg-cover bg-center">
+    <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">Bienvenido a Apolo Servicios</h1>
+    <p class="text-xl drop-shadow-lg">Soluciones de limpieza profesional para tu hogar y oficina.</p>
+  </section>
+
+  
+  <section id="products" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-primary-color mb-12">Nuestros Productos</h2>
+
+      <div class="main-container">
+        
+        <div class="products-container">
+          
+          <div class="product-card">
+            <img src="Jabon 1.jpeg" alt="Jabon líquido (4L)">
+            <div class="product-info">
+              <h3>Jabón líquido (4L)</h3>
+              <p>Antibacterial</p>
+              <div class="price">
+                <span> S/10.50 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+
+          
+          <div class="product-card">
+            <img src="Jabon 2.jpeg" alt="Jabon líquido (18L)">
+            <div class="product-info">
+              <h3>Jabón líquido (18L)</h3>
+              <p>Antibacterial</p>
+              <div class="price">
+                <span> S/60.00 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+
+         
+          <div class="product-card">
+            <img src="Limpia 3.jpg" alt="Limpiatodo Aromático (4L)">
+            <div class="product-info">
+              <h3>Limpiatodo Aromático (4L)</h3>
+              <p>2 en 1 aromatizante y desinfectante</p>
+              <div class="price">
+                <span> S/8.00 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+
+          
+          <div class="product-card">
+            <img src="Limpia 2.jpeg" alt="limpiatodo aromático (18L)">
+            <div class="product-info">
+              <h3>Limpiatodo aromático (18L)</h3>
+              <p>Con fragancia a naturaleza</p>
+              <div class="price">
+                <span> S/36.00 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+
+          
+          <div class="product-card">
+            <img src="Limpia 4.jpeg" alt="limpiavidrios (4L)">
+            <div class="product-info">
+              <h3>Limpiavidrios (4L)</h3>
+              <p>Multiusos</p>
+              <div class="price">
+                <span> S/8.50 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+
+          
+          <div class="product-card">
+            <img src="Limpia.jpeg" alt="limpiavidrios (18L)">
+            <div class="product-info">
+              <h3>Limpia vidrios (18L)</h3>
+              <p>Limpia sin dejar rayones</p>
+              <div class="price">
+                <span> S/36.50 (Por Unidad)</span>
+              </div>
+              <a href="https://w.app/ySiftN">Comprar</a>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="right-container">
+          <div class="image-container">
+            <img src="Precio.jpeg" alt="Imagen de promoción">
+          </div>
+          <div class="image-container">
+            <img src="Precio 2.jpeg" alt="Imagen de promoción">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-primary-color text-white py-6 mt-12">
+    <div class="container mx-auto text-center">
+      <p class="text-lg font-semibold mb-4">¡Sigue nuestras redes y contáctanos para mas informaciónn!</p>
+      
+      
+      <div class="flex justify-center gap-6">
+        
+        <a href="https://www.facebook.com/profile.php?id=61570812780635" target="_blank" class="text-yellow-400 hover:text-yellow-500">
+          <img src="fb.jpg" alt="Facebook" class="w-6 h-6 border-none"> 
+        </a>
+  
+       
+        <a href="https://www.instagram.com/apololimpiadores/" target="_blank" class="text-yellow-400 hover:text-yellow-500">
+          <img src="ig.jpg" alt="Instagram" class="w-6 h-6 border-none"> 
+        </a>
+  
+        
+        <a href="https://x.com/Apololimpiador" target="_blank" class="text-yellow-400 hover:text-yellow-500">
+          <img src="x.png" alt="x.com" class="w-6 h-6 border-none"> 
+        </a>
+      </div>
+  
+      <p class="mt-4 text-sm">&copy; 2024 Apolo Servicios. Todos los derechos reservados.</p>
+    </div>
+  </footer>
